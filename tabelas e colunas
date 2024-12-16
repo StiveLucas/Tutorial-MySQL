@@ -1,0 +1,46 @@
+create database cadastro
+default character set utf8
+default collate utf8_general_ci;
+
+create table pessoas(
+id int not null auto_increment,
+nome varchar(30) not null,
+nascimento date,
+sexo enum('M','F'),
+peso decimal(5,2),
+altura decimal(4,2),
+nacionalidade varchar(20) default "Brasil",
+
+PRIMARY KEY (id)
+) default charset = utf8;
+
+#addc uma coluna (O alter significar pra addc depois da coluna nome)
+alter table pessoas
+add column profissao varchar(10) after nome;
+
+#Apaga uma coluna
+alter table pessoas
+drop column profissao;
+
+#Modifica a coluna
+alter table pessoas
+modify column profissao varchar(20);
+
+#Modifica a coluna
+alter table pessoas
+change column profissao prof varchar(20);
+
+#Modifica o nome da tabela inteira
+alter table pessoas
+rename to foda;
+
+describe pessoas;
+
+#Addc linhas ou registros nas colunas
+insert into pessoas
+(nome, nascimento, sexo, peso, altura, nacionalidade)
+value
+('Kuririn', '2007-11-10', 'M', '50.9', '1.32', 'China'),
+('Yancha', '1990-04-02', 'M', '76.3', '1.67', 'Portugal');
+
+select * from pessoas;
