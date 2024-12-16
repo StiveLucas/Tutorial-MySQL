@@ -33,3 +33,17 @@ select nome, sexo, nacionalidade from pessoas;
 select * from pessoas
 where nacionalidade = 'Brasil'
 order by nome;
+
+#Você tabém pode usar o where desta forma, filtrando o select e exibindo onde o where foi selecionado
+select nome, sexo, altura from pessoas
+where nacionalidade = 'Brasil'
+order by nome;
+
+
+#O between serve para dizer "entre esse numero e e esse".
+select * from pessoas
+where altura between 1.52 and 1.79;
+
+# O in escolhe exatamente o que digitou para mostrar
+select * from pessoas
+where nacionalidade in ('Portugal','China');
