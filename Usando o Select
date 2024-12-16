@@ -1,0 +1,35 @@
+create table pessoas(
+id int not null auto_increment,
+nome varchar(30) not null,
+nascimento date,
+sexo enum('M','F'),
+peso decimal(5,2),
+altura decimal(4,2),
+nacionalidade varchar(20) default "Brasil",
+
+PRIMARY KEY (id)
+) default charset = utf8;
+
+#Seleciona todos os registros e mostra
+select * from pessoas;
+
+#Seleciona todos os registros e mostra em ordem alfabética
+select * from pessoas
+order by nome;
+
+#Da para selecionar e ordena colunas específicas
+select * from pessoas
+order by nascimento, nacionalidade, nome;
+
+#Seleciona todos os registros e mostra em ordem alfabética inversa
+select * from pessoas
+order by nome desc;
+
+
+#Seleciona qual coluna deseja e mostra. OBS: A ordem que você escrever será a que vai aparecer
+select nome, sexo, nacionalidade from pessoas;
+
+#Seleciona e filtra usando o where e a coluna que deseja.
+select * from pessoas
+where nacionalidade = 'Brasil'
+order by nome;
