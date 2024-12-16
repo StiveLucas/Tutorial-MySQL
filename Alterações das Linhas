@@ -1,0 +1,41 @@
+create table dragonBall(
+idDoGuerreiro int not null auto_increment,
+guerreiro varchar(20) not null,
+idade int not null,
+poder float not null,
+
+PRIMARY KEY(idDoGuerreiro)
+);
+
+insert into dragonBall
+(guerreiro, idade, poder)
+value
+('Goku', '45', '8000'),
+('Vegeta', '41', '7000'),
+('Kuririn', '50', '678000'),
+('Kame', '300', '98000'),
+('Oloong', '78', '65000'),
+('Gohan', '23', '800000');
+
+select * from dragonball;
+
+#FAZENDO ALTERAÇÕES NAS LINHAS DA TABELA
+
+#Altera a linha do banco.
+update dragonball
+set idade = '43'
+where idDoGuerreiro = '1';
+
+#Altera mais de uma linha. Para isso é so fica addc as virgulas
+update dragonball
+set guerreiro = 'Mestre Kame', poder = '390'
+where idDoGuerreiro = '4';
+
+#DELETANDO LINHAS.
+
+#Deleta uma linha inteira na tabela
+delete from dragonball
+where idDoGuerreiro = '5';
+
+#Deleta todas as linhas da tabela
+truncate table dragonball;
