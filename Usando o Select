@@ -39,6 +39,10 @@ select nome, sexo, altura from pessoas
 where nacionalidade = 'Brasil'
 order by nome;
 
+# Da para utilizar o where com o and e com o or
+select nome, sexo, altura from pessoas
+where nacionalidade = 'Brasil' and altura > 1.60;
+
 
 #O between serve para dizer "entre esse numero e e esse".
 select * from pessoas
