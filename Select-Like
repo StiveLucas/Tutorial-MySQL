@@ -27,3 +27,11 @@ where guerreiro like 'V%';
 #Aqui está mostrando todos que terminam com a.
 select * from dragonball
 where guerreiro like '%a';
+
+#Aqui está mostrando todos que tenham a letra a em qualquer lugar.
+select * from dragonball
+where guerreiro like '%a%';
+
+#Aqui está mostrando todos que tenham não tem a letra a.
+select * from dragonball
+where guerreiro not like '%a%';
