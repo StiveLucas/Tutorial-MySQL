@@ -1,0 +1,29 @@
+# Tabela usada
+create table dragonBall(
+idDoGuerreiro int not null auto_increment,
+guerreiro varchar(20) not null,
+idade int not null,
+poder float not null,
+
+PRIMARY KEY(idDoGuerreiro)
+);
+
+insert into dragonBall
+(guerreiro, idade, poder)
+value
+('Goku', '45', '8000'),
+('Vegeta', '41', '7000'),
+('Kuririn', '50', '678000'),
+('Kame', '300', '98000'),
+('Oloong', '78', '65000'),
+('Gohan', '23', '800000');
+
+
+# O like serve para dizer traga algo semelhante ou que comece ou termine ou tenha a palavra digitada. 
+# Já o % ele troca pelos caracteres que estão faltando.
+select * from dragonball
+where guerreiro like 'V%';
+
+#Aqui está mostrando todos que terminam com a.
+select * from dragonball
+where guerreiro like '%a';
