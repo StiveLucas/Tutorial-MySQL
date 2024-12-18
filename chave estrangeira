@@ -1,0 +1,26 @@
+create table medicos(
+crm int not null,
+nome varchar(15) not null,
+sobrenome varchar(15),
+email varchar(30) not null,
+telefone1 varchar(30) not null,
+telefone2 varchar(30) not null,
+
+PRIMARY KEY(crm)
+);
+
+create table TELEFONE(
+DDD varchar(3) not null,
+numero varchar(10) not null,
+medico_crm int not null,
+
+foreign key(medico_crm) references medico(crm),
+PRIMARY KEY(DDD, numero)
+);
+
+
+create table especialidade(
+especialidade varchar(20),
+especialidade_medico int
+
+);
